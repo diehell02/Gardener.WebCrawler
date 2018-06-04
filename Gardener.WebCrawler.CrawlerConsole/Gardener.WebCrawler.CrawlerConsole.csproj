@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Log\**" />
+    <EmbeddedResource Remove="Log\**" />
+    <None Remove="Log\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Crawler.db" />
+    <None Remove="log4net.config" />
+    <None Remove="rule.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Crawler.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rule.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gardener.WebCrawler.Contracts\Gardener.WebCrawler.Contracts.csproj" />
+    <ProjectReference Include="..\Gardener.WebCrawler.CrawlerLibrary\Gardener.WebCrawler.CrawlerLibrary.csproj" />
+    <ProjectReference Include="..\Gardener.WebCrawler.DataAccessLibrary\Gardener.WebCrawler.DataAccessLibrary.csproj" />
+  </ItemGroup>
+
+</Project>

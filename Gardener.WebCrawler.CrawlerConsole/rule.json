@@ -1,0 +1,86 @@
+﻿{
+  "Rule": [
+    {
+      "PageType": "AllWork",
+      "Rules": [
+        {
+          "Name": "Gallery",
+          "XPath": "//ul[@id='imageCards']/li[@class='_box']",
+          "Fun": "Nodes",
+          "Param": ""
+        },
+        {
+          "Name": "Gallery.Address",
+          "XPath": "./a",
+          "Fun": "Attr",
+          "Param": "href"
+        },
+        {
+          "Name": "Gallery.Originality",
+          "XPath": "",
+          "Fun": "Text",
+          "Param": ""
+        },
+        {
+          "Name": "Gallery.Role",
+          "XPath": "",
+          "Fun": "Text",
+          "Param": ""
+        },
+        {
+          "Name": "Gallery.Title",
+          "XPath": "./div[@class='work-thumbnail__bd']/a",
+          "Fun": "Attr",
+          "Param": "title"
+        },
+        {
+          "Name": "Gallery.Picture",
+          "XPath": "./a/div[@class='posr']/img",
+          "Fun": "Attr",
+          "Param": "src"
+        },
+        {
+          "Name": "Gallery.Author.Address",
+          "XPath": "./div[@class='l-clearfix ph10 pt8 fz0']/a[@class='name']",
+          "Fun": "Attr",
+          "Param": "href"
+        },
+        {
+          "Name": "Gallery.Name",
+          "XPath": "./div[@class='l-clearfix ph10 pt8 fz0']/a[@class='name']/span",
+          "Fun": "Text",
+          "Param": ""
+        }
+      ]
+    },
+    {
+      "PageType": "Images",
+      "Rules": [
+        {
+          "Name": "CoserName",
+          "XPath": "//div[@class='mb10 dib']/a",
+          "Fun": "Attr",
+          "Param": "title"
+        },
+        {
+          "Name": "Title",
+          "XPath": "//h1[@class='js-post-title']",
+          "Fun": "Text",
+          "Param": ""
+        },
+        {
+          "Name": "WorkImage",
+          "XPath": "//img[@class='detail_std detail_clickable']",
+          "Fun": "Nodes",
+          "Param": ""
+        },
+        {
+          "Name": "WorkImage.Src",
+          "XPath": ".",
+          "Fun": "Attr",
+          "Param": "src"
+        }
+      ]
+    }
+  ]
+}
